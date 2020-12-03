@@ -110,7 +110,11 @@ Now we can get into the meat of the test, the test is comprised of a set of task
 
 Overall, we are not looking to test your knowledge of the frameworks and libraries at play here, but the way in which you solve the problems and construct your solutions. Although not critical, special attention to the user experience would be welcomed, and thanks to the already imported Material-UI, shouldn't be too difficult to get something together that looks good and works in a seamless manner.
 
+If you have enought time, you are free to implement any extra features you like, a good example might be saving your todo items to local storage and retrieving them when a user returns.
+
 If you have any trouble with anything framework related, then do not hesitate to contact us.
+
+Last but not least, enjoy! It should be a fun little task with some scope to express yourself.
 
 1. The current implementation of adding a todo item has a major bug that can result in empty todo items being submitted, can you fix this please?
 2. As a user I would like to be able to mark a todo item as completed, once marked as completed it should become clear to the user that the todo item is completed and they must have the ability to undo the action.
