@@ -16,7 +16,7 @@ At GovernorHub we think its important to strive to write the best software, usin
 
 TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [Material UI](https://material-ui.com/) as a UI component library using [Typescript](https://www.typescriptlang.org/) as the coding language. (_gosh that's a mouthful_).
 
-The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built in to Material UI. Details of how this works can be found [here](https://material-ui.com/styles/basics/). If you are familiar with CSS it shouldn't be much of a problem to adapt to.
+The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built into Material UI. Details of how this works can be found [here](https://material-ui.com/styles/basics/). If you are familiar with CSS it shouldn't be much of a problem to adapt to.
 
 Despite this seemingly complex stack of non-standard frameworks and libraries, the test is designed to be completed by developers who have no experience in them, and can most definitely be completed by those who have only experienced Javascript rather than Typescript. (_Typescript is a super-set of Javascript, so Javascript can be used just fine with no issues_).
 
