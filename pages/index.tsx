@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { Theme } from "@material-ui/core/styles";
 
-import TodoList from "../src/components/todoList/TodoList";
+import TodoList from "../src/components/todoItem/list/TodoList";
 import CreateTodoItemDialog from "../src/components/todoItem/create/CreateTodoItemDialog";
 import { TodoItem } from "../src/components/todoItem/TodoItem";
 
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) => {
   };
 });
 
+// this is the main page of the application, it is not expected that you would need anything more than this
 const Index = () => {
   const classes = useStyles();
 
@@ -33,6 +34,7 @@ const Index = () => {
   const [createTodoDialogOpen, setCreateTodoDialogOpen] = useState(false);
 
   const addTodoItem = (todoItem) => {
+    // append the new todo to the end of the todo list
     setTodoItems((oldItems) => {
       return [...oldItems, todoItem];
     });

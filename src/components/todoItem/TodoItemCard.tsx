@@ -9,6 +9,7 @@ interface Props {
   todoItem: TodoItem;
 }
 
+// The actual todo card that appears on the screen, can be expanded with buttons for different actions and such
 const TodoItemCard = ({ todoItem }: Props) => {
   const { title, description } = todoItem;
 

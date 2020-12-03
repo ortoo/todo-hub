@@ -9,8 +9,8 @@ import { Theme } from "@material-ui/core/styles";
 
 import WarningIcon from "@material-ui/icons/Warning";
 
-import { TodoItem } from "../todoItem/TodoItem";
-import TodoItemCard from "../todoItem/TodoItemCard";
+import { TodoItem } from "../TodoItem";
+import TodoItemCard from "../TodoItemCard";
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
@@ -29,6 +29,7 @@ interface Props {
   todoItems: TodoItem[];
 }
 
+// This component renders the list of todo items as well as anything else in the context of a todo list
 const TodoList = ({ className, todoItems }: Props) => {
   const classes = useStyles();
 

@@ -9,17 +9,20 @@ import Button from "@material-ui/core/Button";
 import { TodoItem } from "../TodoItem";
 import TodoItemForm from "../TodoItemForm";
 
+// we extend DialogProps so that we can change and access the normal dialog properties when calling this component
 interface Props extends DialogProps {
   onSave: (newTodoItem: TodoItem) => void;
   onCloseRequest: () => void;
 }
 
+// Dialog wrapper for creating a to do
 const CreateTodoItemDialog = ({
   onSave,
   onCloseRequest,
   open,
   ...other
 }: Props) => {
+  // useState is used to remember the state of objects between component renders in react
   const [todoItem, setTodoItem] = useState<TodoItem>({
     title: "",
     description: "",
@@ -38,7 +41,9 @@ const CreateTodoItemDialog = ({
 
         <DialogActions>
           <Button onClick={() => onCloseRequest()}>Close</Button>
-          <Button onClick={() => onSave(todoItem)}>Save</Button>
+          <Button color="primary" onClick={() => onSave(todoItem)}>
+            Save
+          </Button>
         </DialogActions>
       </Dialog>
     </>
