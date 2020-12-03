@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 
 import Dialog, { DialogProps } from "@material-ui/core/Dialog";
-import TodoItemForm from "../TodoItemForm";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
-import { makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { TodoItem } from "../TodoItem";
-import { DialogTitle } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) => {
-  return {};
-});
+import { TodoItem } from "../TodoItem";
+import TodoItemForm from "../TodoItemForm";
 
 interface Props extends DialogProps {
   onSave: (newTodoItem: TodoItem) => void;
@@ -24,8 +20,6 @@ const CreateTodoItemDialog = ({
   open,
   ...other
 }: Props) => {
-  const classes = useStyles();
-
   const [todoItem, setTodoItem] = useState<TodoItem>({
     title: "",
     description: "",

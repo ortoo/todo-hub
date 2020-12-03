@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-import { makeStyles, Theme } from "@material-ui/core";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import AddIcon from "@material-ui/icons/Add";
+import Container from "@material-ui/core/Container";
+
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import { Theme } from "@material-ui/core/styles";
 
 import TodoList from "../src/components/todoList/TodoList";
 import CreateTodoItemDialog from "../src/components/todoItem/create/CreateTodoItemDialog";
 import { TodoItem } from "../src/components/todoItem/TodoItem";
-import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme: Theme) => {
   return {

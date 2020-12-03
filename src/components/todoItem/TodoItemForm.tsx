@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { makeStyles, TextField, Theme } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import { Theme } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
 import { TodoItem } from "./TodoItem";
 
 const useStyles = makeStyles((theme: Theme) => {

@@ -1,11 +1,13 @@
 import React from "react";
+import type { AppProps } from "next/app";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../src/theme";
 
-import type { AppProps } from "next/app";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+import { ThemeProvider } from "@material-ui/core/styles";
+
+import theme from "../src/theme";
 
 import Header from "../src/components/header/Header";
 

@@ -1,16 +1,16 @@
 import React from "react";
 
-import {
-  ListSubheader,
-  makeStyles,
-  Theme,
-  Typography,
-} from "@material-ui/core";
-
-import TodoItemCard from "../todoItem/TodoItemCard";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { TodoItem } from "../todoItem/TodoItem";
+
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import { Theme } from "@material-ui/core/styles";
+
 import WarningIcon from "@material-ui/icons/Warning";
+
+import { TodoItem } from "../todoItem/TodoItem";
+import TodoItemCard from "../todoItem/TodoItemCard";
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
