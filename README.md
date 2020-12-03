@@ -16,7 +16,7 @@ At GovernorHub we think its important to strive to write the best software, usin
 
 TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [Material UI](https://material-ui.com/) as a UI component library using [Typescript](https://www.typescriptlang.org/) as the coding language. (_gosh that's a mouthful_).
 
-The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built in to Material UI. Details of how this works can be found [here](https://material-ui.com/styles/basics/). If you are familiar with CSS it shouldn;t be much of a problem to adapt to.
+The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built in to Material UI. Details of how this works can be found [here](https://material-ui.com/styles/basics/). If you are familiar with CSS it shouldn't be much of a problem to adapt to.
 
 Despite this seemingly complex stack of non-standard frameworks and libraries, the test is designed to be completed by developers who have no experience in them, and can most definitely be completed by those who have only experienced Javascript rather than Typescript. (_Typescript is a super-set of Javascript, so Javascript can be used just fine with no issues_).
 
@@ -63,7 +63,7 @@ _Note: there is what seems to be a bug with `material-ui` imports and VSCode_
 
 // Although this way will work, it does not enable tree-shaking (all the components will be imported rather than only what we need)
 // This can be mitigated using babel, but this project will not tree-shake properly
-// Wrong (but if you did it this way consistently it isn;t a massive issue as long as you are aware of tbe pitfalls)
+// Wrong (but if you did it this way consistently it isn't a massive issue as long as you are aware of tbe pitfalls)
 import { Dialog } from "@material-ui-/core"
 
 // VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, casuing some odd CSS issues down the road
@@ -75,10 +75,28 @@ import Dialog from "@material-ui-/core/Dialog/Dialog"
 import Dialog from "@material-ui-/core/Dialog"
 ```
 
+### Naming
+
+> Naming things is the hardest part of software development - _James Sharp - Head of Engineering_
+
+When naming things, be explicit and make sure that the next person who looks at your code is able to read it. The code you wirte isn't just for the compiler, it's also for the next person. Keep that in mind.
+
 ## Getting Started
 
-To get started, fork this repository... etc etc etc (will complete with full steps once I do it myself to make sure its as little pain as possible)
+We won't go into too much detail here as we are sure you already have these things or know how to get them installed easily enough.
 
-```
+### Prerequisites
 
-```
+- A code editor, we recommend [Visual Studio Code](https://code.visualstudio.com/).
+- [Node.js & NPM](https://nodejs.org/en/), npm comes with node, get version 14 at the very least and make sure it is configured in your PATH.
+- The latest version of Typescript, which can be installed globally using `npm install -g typescript` after you have installed npm in the previous step.
+- Yourself and an hour of your time.
+
+### Setup
+
+1. Fork this repository (https://github.com/ortoo/todo-hub), if you are unsure how to do this, please refer to [these instructions](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
+2. Clone to your local machine so that you can start developing.
+3. Navigate to the folder you have cloned the project to.
+4. run `npm install`.
+5. Start the application and test that the current functionaility is working using `npm run dev` and navigating to `localhost:3000`.
+6. 🎉
