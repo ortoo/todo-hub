@@ -94,9 +94,25 @@ We won't go into too much detail here as we are sure you already have these thin
 
 ### Setup
 
-1. Fork this repository (https://github.com/ortoo/todo-hub), if you are unsure how to do this, please refer to [these instructions](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
-2. Clone to your local machine so that you can start developing.
-3. Navigate to the folder you have cloned the project to.
-4. run `npm install`.
-5. Start the application and test that the current functionaility is working using `npm run dev` and navigating to `localhost:3000`.
-6. 🎉
+1. Duplicate this repository (https://github.com/ortoo/todo-hub), if you are unsure how to do this, please refer to [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/duplicating-a-repository).
+2. Ensure that your repository is private so that other applicants cannot see your code.
+3. Clone to your local machine so that you can start developing.
+4. Navigate to the folder you have cloned the project to.
+5. run `npm install`.
+6. Start the application and test that the current functionaility is working using `npm run dev` and navigating to `localhost:3000`.
+7. 🎉
+
+## Tasks
+
+Congratulations, you've made it this far!
+
+Now we can get into the meat of the test, the test is comprised of a set of tasks that lay out loose specifications for features we would like added to TodoHub. You can solve the issue in any way that you see fit, try to keep each task delivered within a single commit with a suitable message (we know and expect that you may find bugs in your own code later and commit a fix at a later time, that is fine). Where possible, add code documentation to let us know why you have done something. This makes it easier for us to understand your style and thinking behind the problem.
+
+Overall, we are not looking to test your knowledge of the frameworks and libraries at play here, but the way in which you solve the problems and construct your solutions. Although not critical, special attention to the user experience would be welcomed, and thanks to the already imported Material-UI, shouldn't be too difficult to get something together that looks good and works in a seamless manner.
+
+If you have any trouble with anything framework related, then do not hesitate to contact us.
+
+1. The current implementation of adding a todo item has a major bug that can result in empty todo items being submitted, can you fix this please?
+2. As a user I would like to be able to mark a todo item as completed, once marked as completed it should become clear to the user that the todo item is completed and they must have the ability to undo the action.
+3. As a user I would like to remove a todo item from my list of todos, take special care here and ensure that the user wont remove an item by mistake.
+4. As a user I would like to edit my todo item as I didn't properly fill in all the information I should have when creating it. The `TodoItemForm` that already exists in the application could be used to help you here.
