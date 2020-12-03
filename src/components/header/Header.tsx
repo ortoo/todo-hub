@@ -21,15 +21,22 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="fixed" color="primary">
-      <Container disableGutters>
-        <Toolbar>
-          <Typography variant="h6" color="secondary" className={classes.title}>
-            TodoHub
-          </Typography>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <>
+      <AppBar position="fixed" color="primary">
+        <Container disableGutters>
+          <Toolbar>
+            <Typography
+              variant="h6"
+              color="secondary"
+              className={classes.title}
+            >
+              TodoHub
+            </Typography>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Toolbar />
+    </>
   );
 };
 
