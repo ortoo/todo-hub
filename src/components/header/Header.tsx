@@ -2,10 +2,19 @@ import React from "react";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Container, makeStyles, Theme } from "@material-ui/core";
+
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import { Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => {
-  return {};
+  return {
+    title: {
+      flexGrow: 1,
+    },
+  };
 });
 
 const Header = () => {
@@ -14,7 +23,11 @@ const Header = () => {
   return (
     <AppBar position="fixed" color="primary">
       <Container disableGutters>
-        <Toolbar></Toolbar>
+        <Toolbar>
+          <Typography variant="h6" color="secondary" className={classes.title}>
+            TodoHub
+          </Typography>
+        </Toolbar>
       </Container>
     </AppBar>
   );
