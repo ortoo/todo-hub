@@ -79,7 +79,7 @@ import Dialog from "@material-ui-/core/Dialog"
 
 > Naming things is the hardest part of software development - _James Sharp - Head of Engineering_
 
-When naming things, be explicit and make sure that the next person who looks at your code is able to read it. The code you wirte isn't just for the compiler, it's also for the next person. Keep that in mind.
+When naming things, be explicit and make sure that the next person who looks at your code is able to read it. The code you write isn't just for the compiler, it's also for the next person. Keep that in mind.
 
 ## Getting Started
 
@@ -102,21 +102,39 @@ We won't go into too much detail here as we are sure you already have these thin
 6. Start the application and test that the current functionaility is working using `npm run dev` and navigating to `localhost:3000`.
 7. 🎉
 
-## Tasks
+## The Application
+
+### Structure
+
+`/pages/index.tsx` is the home page of the application, you shouldn't need another page for what is being asked, so everything can go through this file. If you were to create another page, you would create another folder in `/pages` with an `index.tsx` inside, whatever you named the folder would be the url route of the page.
+For example `/pages/login/index.tsx` would be accessible via `localhost:3000/login`
+
+`/src/components` is where the components for the application live. It has 2 folders:
+
+- `header`, where the application app bar is located.
+- `todoItem`, where all the code and components concerning a todoItem are held. The list is in `list` and the create modal is in `create`.
+
+The way that the components folder is structured is entirely subjective, but again, its good to be consistent with whatever you choose to do. You are free to change this structure as long as none of the current functionaility is lost.
+
+### Tasks
 
 Congratulations, you've made it this far!
 
-Now we can get into the meat of the test, the test is comprised of a set of tasks that lay out loose specifications for features we would like added to TodoHub. You can solve the issue in any way that you see fit, try to keep each task delivered within a single commit with a suitable message (we know and expect that you may find bugs in your own code later and commit a fix at a later time, that is fine). Where possible, add code documentation to let us know why you have done something. This makes it easier for us to understand your style and thinking behind the problem.
+Now we can get into the meat of the test, the test is comprised of a set of tasks that lay out loose specifications for features we would like added to TodoHub. You can solve the issues in any way that you see fit, try to keep each task delivered within a single commit with a suitable message (we know and expect that you may find bugs in your own code later and commit a fix at a later time, that is fine). Where possible, add code documentation to let us know why you have done something. This makes it easier for us to understand your style and thinking behind the problem.
 
 Overall, we are not looking to test your knowledge of the frameworks and libraries at play here, but the way in which you solve the problems and construct your solutions. Although not critical, special attention to the user experience would be welcomed, and thanks to the already imported Material-UI, shouldn't be too difficult to get something together that looks good and works in a seamless manner.
 
-If you have enought time, you are free to implement any extra features you like, a good example might be saving your todo items to local storage and retrieving them when a user returns.
+If you have enough time, you are free to implement any extra features you like, a good example might be saving your todo items to local storage and retrieving them when a user returns.
 
 If you have any trouble with anything framework related, then do not hesitate to contact us.
 
 Last but not least, enjoy! It should be a fun little task with some scope to express yourself.
 
 1. The current implementation of adding a todo item has a major bug that can result in empty todo items being submitted, can you fix this please?
-2. As a user I would like to be able to mark a todo item as completed, once marked as completed it should become clear to the user that the todo item is completed and they must have the ability to undo the action.
+2. As a user I would like to be able to mark a todo item as completed, once marked as completed it should become clear to the user that the todo item is completed and they must have the ability to undo the action. You may want to move the item within the list as it is now more / less important.
 3. As a user I would like to remove a todo item from my list of todos, take special care here and ensure that the user wont remove an item by mistake.
 4. As a user I would like to edit my todo item as I didn't properly fill in all the information I should have when creating it. The `TodoItemForm` that already exists in the application could be used to help you here.
+
+## Submission
+
+Once you have completed the tasks, invite `Kyle Selman` as a collaborator on your repository so that we can access your code, feel free to send an email to `kyle.selman@thekeysupport.com` too in order to give a nudge in the case of the GitHub notification getting lost.
