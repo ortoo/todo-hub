@@ -12,7 +12,7 @@ At GovernorHub we think its important to strive to write the best software, usin
 
 ## The Stack
 
-TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [Material UI](https://material-ui.com/) as a component library using [Typescript](https://www.typescriptlang.org/) as the coding language (_gosh that's a mouthful_).
+TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [Material UI](https://material-ui.com/) as a UI component library using [Typescript](https://www.typescriptlang.org/) as the coding language (_gosh that's a mouthful_).
 
 Despite this, the test is designed to be completed by developers who have no experience in these libraries, and can most definitely be completed by those who have only experienced Javascript rather than Typescript. (_Typescript is a super-set of Javascript, so Javascript can be used just fine with no issues_).
 
