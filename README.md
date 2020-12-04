@@ -100,7 +100,8 @@ We won't go into too much detail here as we are sure you already have these thin
 4. Navigate to the folder you have cloned the project to.
 5. run `npm install`.
 6. Start the application and test that the current functionaility is working using `npm run dev` and navigating to `localhost:3000`.
-7. 🎉
+7. During development, Next.js uses hot reloading and remembers the state of your components, so just save the file you are working on and the application should automatically update, it will also display errors to you in the browser. _Note: Sometimes it doesnt quite work right, if thats the case just re-run the app with `npm run dev`_
+8. 🎉
 
 ## The Application
 
