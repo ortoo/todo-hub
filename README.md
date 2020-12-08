@@ -4,7 +4,7 @@
 
 TodoHub is a simple "todo list" application in need of some love and care. TodoHub in its current iteration has the ability to list todo items, as well as add new todo items, but in order for it to become usable it needs some extra functionality. Your job is to implement that extra functionaility, you are also welcome to dazzle us with any extras you have up your sleeve, within the time allocated.
 
-It is expected that this test will take a maximum of 1 hour of your time to complete, plus the time you need for the often forgotten configuration and setup 'faffing'. _(We have all been there and have felt the pain, hopefully this **README** will reduce that pain to a minimum)_
+It is expected that this test will take around a maximum of 2 hours of your time to complete, plus the time you need for the often forgotten configuration and setup 'faffing'. _(We have all been there and have felt the pain, hopefully this **README** will reduce that pain to a minimum)_
 
 This **README** goes through a lot of details about this application and what we expect / are asking from you, but we must stress that we are more interested about the way you solve the problems, than your knowledge of the stack.
 
@@ -66,7 +66,7 @@ _Note: there is what seems to be a bug with `material-ui` imports and VSCode_
 // Wrong (but if you did it this way consistently it isn't a massive issue as long as you are aware of tbe pitfalls)
 import { Dialog } from "@material-ui-/core"
 
-// VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, causing some odd CSS issues down the road
+// VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, casuing some odd CSS issues down the road
 // Wrong
 import Dialog from "@material-ui-/core/Dialog/Dialog"
 
@@ -90,7 +90,7 @@ We won't go into too much detail here as we are sure you already have these thin
 - A code editor, we recommend [Visual Studio Code](https://code.visualstudio.com/).
 - [Node.js & NPM](https://nodejs.org/en/), npm comes with node, get version 14 at the very least and make sure it is configured in your PATH.
 - The latest version of Typescript, which can be installed globally using `npm install -g typescript` after you have installed npm in the previous step.
-- Yourself and an hour of your time.
+- Yourself and a coiuple of hours of your time.
 
 ### Setup
 
