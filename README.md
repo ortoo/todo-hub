@@ -66,7 +66,7 @@ _Note: there is what seems to be a bug with `material-ui` imports and VSCode_
 // Wrong (but if you did it this way consistently it isn't a massive issue as long as you are aware of tbe pitfalls)
 import { Dialog } from "@material-ui-/core"
 
-// VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, casuing some odd CSS issues down the road
+// VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, causing some odd CSS issues down the road
 // Wrong
 import Dialog from "@material-ui-/core/Dialog/Dialog"
 
