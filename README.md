@@ -131,6 +131,8 @@ If you have any trouble with anything framework related, then do not hesitate to
 
 Last but not least, enjoy! It should be a fun little task with some scope to express yourself.
 
+_Note: There are multiple ways to solve these problems, you can go with any solution you wish, be careful to know about alternative solutions to your own_
+
 1. The current implementation of adding a todo item has a major bug that can result in empty todo items being submitted, can you fix this please?
 2. As a user I would like to be able to mark a todo item as completed, once marked as completed it should become clear to the user that the todo item is completed and they must have the ability to undo the action. You may want to move the item within the list as it is now more / less important.
 3. As a user I would like to remove a todo item from my list of todos, take special care here and ensure that the user wont remove an item by mistake.
