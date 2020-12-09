@@ -139,3 +139,7 @@ Last but not least, enjoy! It should be a fun little task with some scope to exp
 ## Submission
 
 Once you have completed the tasks, invite `Kyle Selman` as a collaborator on your repository so that we can access your code, feel free to send an email to `kyle.selman@thekeysupport.com` too in order to give a nudge in the case of the GitHub notification getting lost.
+
+## Next Steps
+
+Once you have finished, we will have a look over your application and essentially give it a mini code review. Once completed, we will invite you back in for a short discussion about what you have done as well as listen to your feedback and any questions you have.
