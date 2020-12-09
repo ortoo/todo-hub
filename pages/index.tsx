@@ -25,14 +25,16 @@ const useStyles = makeStyles((theme: Theme) => {
   };
 });
 
-// this is the main page of the application, it is not expected that you would need anything more than this
+// this is the main page of the application, it is not expected that you would need another page
 const Index = () => {
   const classes = useStyles();
 
+  // the "saved" todo items that will display to the user.
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
 
   const [createTodoDialogOpen, setCreateTodoDialogOpen] = useState(false);
 
+  // this function shows how to safely mutate a state, in this case adding an item
   const addTodoItem = (todoItem) => {
     // append the new todo to the end of the todo list
     setTodoItems((oldItems) => {
