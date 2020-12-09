@@ -30,7 +30,12 @@ const CreateTodoItemDialog = ({
 
   return (
     <>
-      <Dialog open={open} onExiting={() => onCloseRequest()} {...other}>
+      <Dialog
+        open={open}
+        // When the dialog is closing, reset the data for the form
+        onExiting={() => setTodoItem({ title: "", description: "" })}
+        {...other}
+      >
         <DialogTitle>Create a new todo item</DialogTitle>
         <DialogContent>
           <TodoItemForm
