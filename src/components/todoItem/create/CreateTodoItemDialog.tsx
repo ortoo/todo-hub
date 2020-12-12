@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 
 import { TodoItem } from "../TodoItem";
 import TodoItemForm from "../TodoItemForm";
+import TodoValidationAlert from "../todoValidationAlert/TodoValidationAlert"
 
 // we extend DialogProps so that we can change and access the normal dialog properties when calling this component
 interface Props extends DialogProps {
@@ -46,7 +47,12 @@ const CreateTodoItemDialog = ({
 
         <DialogActions>
           <Button onClick={() => onCloseRequest()}>Close</Button>
-          <Button color="primary" onClick={() => onSave(todoItem)}>
+          <Button
+            color="primary"
+            onClick={() => onSave(todoItem)}
+            // Until both boxes contain anyting other than an empty string *i.e. if both boxes are empty* the UI dissables the save button
+            disabled={todoItem.description === "" || todoItem.title === ""}
+          >
             Save
           </Button>
         </DialogActions>
