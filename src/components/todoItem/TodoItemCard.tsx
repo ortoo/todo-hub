@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from '@material-ui/icons/Delete';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
+import EditIcon from '@material-ui/icons/Edit';
 
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { Theme } from "@material-ui/core/styles";
@@ -28,11 +29,13 @@ const useStyles = makeStyles((theme: Theme) => {
 
 interface Props {
   todoItem: TodoItem;
+  index: Number;
   handleDelete: (updatedTodoItem: TodoItem) => void;
+  handleEdit: (updatedTodoItem: TodoItem) => void;
 }
 
 // The actual todo card that appears on the screen, can be expanded with buttons for different actions and such
-const TodoItemCard = ({ todoItem, handleDelete, index }: Props) => {
+const TodoItemCard = ({ todoItem, handleDelete, handleEdit, index }: Props) => {
   const classes = useStyles();
 
   const { title, description } = todoItem;
@@ -51,10 +54,10 @@ const TodoItemCard = ({ todoItem, handleDelete, index }: Props) => {
                     color="primary"
                     startIcon={<CheckCircleIcon />}
                     onClick={() => {
+                      setConfirmation(false);
                       handleDelete({ index });
                     }}
                     className={classes.approve}
-
                   >
                     Confirm
                   </Button>
@@ -66,7 +69,6 @@ const TodoItemCard = ({ todoItem, handleDelete, index }: Props) => {
                       setConfirmation(false);
                     }}
                     className={classes.cancel}
-
                   >
                     Cancel
                   </Button>
@@ -74,6 +76,7 @@ const TodoItemCard = ({ todoItem, handleDelete, index }: Props) => {
               )
               :
               (
+                <>
                 <Button
                   variant="outlined"
                   color="primary"
@@ -82,10 +85,20 @@ const TodoItemCard = ({ todoItem, handleDelete, index }: Props) => {
                     setConfirmation(true)
                   }}
                   className={classes.cancel}
-
                 >
                   Delete
                 </Button>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  startIcon={<EditIcon />}
+                  onClick={() => {
+                    handleEdit({ index });
+                  }}
+                >
+                  Edit
+                </Button>
+                </>
               )
           }
 

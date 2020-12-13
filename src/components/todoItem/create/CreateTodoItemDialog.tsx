@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Dialog, { DialogProps } from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -14,13 +14,16 @@ import TodoValidationAlert from "../todoValidationAlert/TodoValidationAlert"
 interface Props extends DialogProps {
   onSave: (newTodoItem: TodoItem) => void;
   onCloseRequest: () => void;
+  prvToDoItem: Object
 }
 
 // Dialog wrapper for creating a to do
 const CreateTodoItemDialog = ({
+  prvToDoItem,
   onSave,
   onCloseRequest,
   open,
+  title,
   ...other
 }: Props) => {
   // useState is used to remember the state of objects between component renders in react
@@ -28,23 +31,29 @@ const CreateTodoItemDialog = ({
     title: "",
     description: "",
   });
-
+useEffect(() => {
+  setTodoItem({ 
+    title: prvToDoItem? prvToDoItem.title : "", 
+    description: prvToDoItem ? prvToDoItem.description  : ""
+  })
+}, [prvToDoItem])
   return (
     <>
       <Dialog
         open={open}
         // When the dialog is closing, reset the data for the form
-        onExiting={() => setTodoItem({ title: "", description: "" })}
+        onExiting={() => !prvToDoItem ? setTodoItem({ title: "", description: "" }) : setTodoItem({ title: prvToDoItem.title, description: prvToDoItem.description })}
         {...other}
       >
-        <DialogTitle>Create a new todo item</DialogTitle>
+        <DialogTitle>
+          {title}
+        </DialogTitle>
         <DialogContent>
           <TodoItemForm
             todoItem={todoItem}
             onChange={(updatedTodoItem) => setTodoItem(updatedTodoItem)}
           ></TodoItemForm>
         </DialogContent>
-
         <DialogActions>
           <Button onClick={() => onCloseRequest()}>Close</Button>
           <Button

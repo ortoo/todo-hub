@@ -32,7 +32,9 @@ const Index = () => {
   // the "saved" todo items that will display to the user.
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
 
+  const [prvTodoItem, setPrvTodoItem] = useState([]);
   const [createTodoDialogOpen, setCreateTodoDialogOpen] = useState(false);
+  const [editTodoDialogOpen, setEditTodoDialogOpen] = useState(false);
 
   // this function shows how to safely mutate a state, in this case adding an item
   const addTodoItem = (todoItem) => {
@@ -42,7 +44,6 @@ const Index = () => {
     });
     setCreateTodoDialogOpen(false);
   };
-
   // this function uses basic filtering in javascript to remove an object with the desired index
   const removeTodoItem = (index) => {
     const reducedArr = todoItems.filter((item, itemIndex) => {
@@ -50,15 +51,24 @@ const Index = () => {
     })
     setTodoItems(reducedArr)
   };
-
+  // this function searches for the index of the etited file and replaces it using original add/remove functions
+  const editTodoItem = (todoItem) => {
+    const findItemIndex = todoItems.findIndex((d, i) => (d === prvTodoItem))
+    removeTodoItem({index: findItemIndex});
+    addTodoItem(todoItem);
+    setEditTodoDialogOpen(false)
+  };
   return (
     <Container>
       <TodoList
         className={classes.todoList}
         todoItems={todoItems}
-        handleDelete={(index) => removeTodoItem(index)}
+        handleDelete={removeTodoItem}
+        handleEdit={(index) => {
+          setPrvTodoItem(todoItems[index.index])
+          setEditTodoDialogOpen(true)
+        }}
       ></TodoList>
-
       <Tooltip title="Create new todo item">
         <Fab
           className={classes.createItemFab}
@@ -69,9 +79,17 @@ const Index = () => {
         </Fab>
       </Tooltip>
       <CreateTodoItemDialog
+        title="Create a new todo item"
         open={createTodoDialogOpen}
         onCloseRequest={() => setCreateTodoDialogOpen(false)}
         onSave={addTodoItem}
+      ></CreateTodoItemDialog>
+      <CreateTodoItemDialog
+        title="Edit an existing todo item"
+        prvToDoItem={prvTodoItem}
+        open={editTodoDialogOpen}
+        onCloseRequest={() => setEditTodoDialogOpen(false)}
+        onSave={editTodoItem}
       ></CreateTodoItemDialog>
     </Container>
   );

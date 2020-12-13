@@ -28,10 +28,11 @@ interface Props {
   className: string;
   todoItems: TodoItem[];
   handleDelete: () => void;
+  handleEdit: () => void;
 }
 
 // This component renders the list of todo items as well as anything else in the context of a todo list
-const TodoList = ({ className, todoItems, handleDelete }: Props) => {
+const TodoList = ({ className, todoItems, handleDelete, handleEdit }: Props) => {
   const classes = useStyles();
 
   const todoItemsCount = todoItems?.length || 0;
@@ -60,6 +61,7 @@ const TodoList = ({ className, todoItems, handleDelete }: Props) => {
               <TodoItemCard
                 todoItem={todoItem}
                 handleDelete={(index) => handleDelete(index)}
+                handleEdit={(index) => handleEdit(index)}
                 index={index}
               ></TodoItemCard>
             </Grid>
