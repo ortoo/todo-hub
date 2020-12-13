@@ -8,7 +8,6 @@ import Button from "@material-ui/core/Button";
 
 import { TodoItem } from "../TodoItem";
 import TodoItemForm from "../TodoItemForm";
-import TodoValidationAlert from "../todoValidationAlert/TodoValidationAlert"
 
 // we extend DialogProps so that we can change and access the normal dialog properties when calling this component
 interface Props extends DialogProps {
@@ -30,11 +29,13 @@ const CreateTodoItemDialog = ({
   const [todoItem, setTodoItem] = useState<TodoItem>({
     title: "",
     description: "",
+    isComplete: false,
   });
 useEffect(() => {
   setTodoItem({ 
     title: prvToDoItem? prvToDoItem.title : "", 
-    description: prvToDoItem ? prvToDoItem.description  : ""
+    description: prvToDoItem ? prvToDoItem.description  : "",
+    isComplete: prvToDoItem ? prvToDoItem.isComplete : false
   })
 }, [prvToDoItem])
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -40,10 +40,17 @@ const Index = () => {
   const addTodoItem = (todoItem) => {
     // append the new todo to the end of the todo list
     setTodoItems((oldItems) => {
-      return [...oldItems, todoItem];
+      return [todoItem, ...oldItems];
     });
     setCreateTodoDialogOpen(false);
   };
+
+  const addTodoItemReverse = (todoItem) => {
+      setTodoItems((oldItems) => {
+        return [ ...oldItems, todoItem];
+      });
+      setCreateTodoDialogOpen(false);
+    };
   // this function uses basic filtering in javascript to remove an object with the desired index
   const removeTodoItem = (index) => {
     const reducedArr = todoItems.filter((item, itemIndex) => {
@@ -58,12 +65,27 @@ const Index = () => {
     addTodoItem(todoItem);
     setEditTodoDialogOpen(false)
   };
+  const handleTaskComplete = (i) => {
+    const findItem = todoItems[i.index]
+    const addComplete = {...findItem, isComplete: true} 
+    removeTodoItem({index: i.index});
+    addTodoItemReverse(addComplete)
+  };
+  const handleTaskInComplete = (i) => {
+    const findItem = todoItems[i.index]
+    const addComplete = {...findItem, isComplete: false} 
+    removeTodoItem({index: i.index});
+    addTodoItem(addComplete)
+  };
+
   return (
     <Container>
       <TodoList
         className={classes.todoList}
         todoItems={todoItems}
         handleDelete={removeTodoItem}
+        handleTaskComplete={handleTaskComplete}
+        handleTaskInComplete={handleTaskInComplete}
         handleEdit={(index) => {
           setPrvTodoItem(todoItems[index.index])
           setEditTodoDialogOpen(true)

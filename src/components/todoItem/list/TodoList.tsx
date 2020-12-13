@@ -27,12 +27,15 @@ const useStyles = makeStyles((theme: Theme) => {
 interface Props {
   className: string;
   todoItems: TodoItem[];
+  taskComplete: Boolean;
   handleDelete: () => void;
   handleEdit: () => void;
+  handleTaskComplete: () => void;
+  handleTaskInComplete: () => void;
 }
 
 // This component renders the list of todo items as well as anything else in the context of a todo list
-const TodoList = ({ className, todoItems, handleDelete, handleEdit }: Props) => {
+const TodoList = ({ className, todoItems, handleTaskComplete, handleTaskInComplete, handleDelete, handleEdit }: Props) => {
   const classes = useStyles();
 
   const todoItemsCount = todoItems?.length || 0;
@@ -63,6 +66,8 @@ const TodoList = ({ className, todoItems, handleDelete, handleEdit }: Props) => 
                 handleDelete={(index) => handleDelete(index)}
                 handleEdit={(index) => handleEdit(index)}
                 index={index}
+                handleTaskComplete={(index) => handleTaskComplete(index)}
+                handleTaskInComplete={(index) => handleTaskInComplete(index)}
               ></TodoItemCard>
             </Grid>
           );
