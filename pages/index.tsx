@@ -43,9 +43,21 @@ const Index = () => {
     setCreateTodoDialogOpen(false);
   };
 
+  // this function uses basic filtering in javascript to remove an object with the desired index
+  const removeTodoItem = (index) => {
+    const reducedArr = todoItems.filter((item, itemIndex) => {
+      return itemIndex !== index.index
+    })
+    setTodoItems(reducedArr)
+  };
+
   return (
     <Container>
-      <TodoList className={classes.todoList} todoItems={todoItems}></TodoList>
+      <TodoList
+        className={classes.todoList}
+        todoItems={todoItems}
+        handleDelete={(index) => removeTodoItem(index)}
+      ></TodoList>
 
       <Tooltip title="Create new todo item">
         <Fab

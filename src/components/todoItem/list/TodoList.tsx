@@ -27,10 +27,11 @@ const useStyles = makeStyles((theme: Theme) => {
 interface Props {
   className: string;
   todoItems: TodoItem[];
+  handleDelete: () => void;
 }
 
 // This component renders the list of todo items as well as anything else in the context of a todo list
-const TodoList = ({ className, todoItems }: Props) => {
+const TodoList = ({ className, todoItems, handleDelete }: Props) => {
   const classes = useStyles();
 
   const todoItemsCount = todoItems?.length || 0;
@@ -38,26 +39,29 @@ const TodoList = ({ className, todoItems }: Props) => {
   return (
     <div className={className}>
       {todoItemsCount > 0 ? (
-        <ListSubheader>{`You have ${todoItemsCount} thing${
-          todoItemsCount === 1 ? "" : "s"
-        }  to do`}</ListSubheader>
+        <ListSubheader>{`You have ${todoItemsCount} thing${todoItemsCount === 1 ? "" : "s"
+          }  to do`}</ListSubheader>
       ) : (
-        <div className={classes.noTodos}>
-          <WarningIcon
-            color="error"
-            className={classes.warningIcon}
-          ></WarningIcon>
-          <Typography variant="subtitle1" color="textSecondary">
-            You have nothing to do, click the add button in the bottom right to
-            get started
+          <div className={classes.noTodos}>
+            <WarningIcon
+              color="error"
+              className={classes.warningIcon}
+            ></WarningIcon>
+            <Typography variant="subtitle1" color="textSecondary">
+              You have nothing to do, click the add button in the bottom right to
+              get started
           </Typography>
-        </div>
-      )}
+          </div>
+        )}
       <Grid container spacing={2}>
         {todoItems.map((todoItem, index) => {
           return (
             <Grid key={index} item xs={12} sm={6} md={3}>
-              <TodoItemCard todoItem={todoItem}></TodoItemCard>
+              <TodoItemCard
+                todoItem={todoItem}
+                handleDelete={(index) => handleDelete(index)}
+                index={index}
+              ></TodoItemCard>
             </Grid>
           );
         })}
