@@ -1,5 +1,15 @@
 # TodoHub - The GovernorHub Developer Test
 
+## Check out the applicaiton live here:
+https://todo-hub.vercel.app/
+
+## The finished product
+This app was written as part of a tech test. In short, this application demonstrates my abilities with react and other tools.
+The challenge: impliment new and exciting changes to an existing productivity app.
+I had no prior knowledge of next or typscript before starting this so learned a whole bunch. 
+There are a few things i would do differently in the future but on the whole I am happy with the end result
+
+
 ## Introduction
 
 TodoHub is a simple "todo list" application in need of some love and care. TodoHub in its current iteration has the ability to list todo items, as well as add new todo items, but in order for it to become usable it needs some extra functionality. Your job is to implement that extra functionaility, you are also welcome to dazzle us with any extras you have up your sleeve, within the time allocated.
