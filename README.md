@@ -1,5 +1,7 @@
 # TodoHub - The GovernorHub Developer Test
 
+_This is the Typescript version of the test, if you want to have a go at the plain JS version, go to https://github.com/ortoo/todo-hub-js_
+
 ## Introduction
 
 TodoHub is a simple "todo list" application in need of some love and care. TodoHub in its current iteration has the ability to list todo items, as well as add new todo items, but in order for it to become usable it needs some extra functionality. Your job is to implement that extra functionaility, you are also welcome to dazzle us with any extras you have up your sleeve, within the time allocated.
