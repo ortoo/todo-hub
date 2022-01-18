@@ -1,12 +1,14 @@
-# TodoHub - The GovernorHub Developer Test
+# TodoHub - GovernorHub & The Key Developer Test
 
 _This is the Typescript version of the test, if you want to have a go at the plain JS version, go to https://github.com/ortoo/todo-hub-js_
 
 ## Introduction
 
-TodoHub is a simple "todo list" application in need of some love and care. TodoHub in its current iteration has the ability to list todo items, as well as add new todo items, but in order for it to become usable it needs some extra functionality. Your job is to implement that extra functionaility, you are also welcome to dazzle us with any extras you have up your sleeve, within the time allocated.
+TodoHub is a simple "todo list" application in need of some love and care. TodoHub in its current iteration has the ability to list todo items, as well as add new todo items, but in order for it to become usable it needs some extra functionality. Your job is to implement that extra functionaility, you are also welcome to dazzle us with any extras you have up your sleeve.
 
-It is expected that this test will take around a maximum of 2 hours of your time to complete, plus the time you need for the often forgotten configuration and setup 'faffing'. _(We have all been there and have felt the pain, hopefully this **README** will reduce that pain to a minimum)_
+It is expected that this test will take around a maximum of 3 hours of your time to complete, plus the time you need for the often forgotten configuration and setup 'faffing'. _(We have all been there and have felt the pain, hopefully this **README** will reduce that pain to a minimum)_
+
+However, you are welcome to take as long as you need, we don't feel the need to add unnecessary time constraints.
 
 This **README** goes through a lot of details about this application and what we expect / are asking from you, but we must stress that we are more interested about the way you solve the problems, than your knowledge of the stack.
 
@@ -16,11 +18,11 @@ At GovernorHub we think its important to strive to write the best software, usin
 
 ## The Stack
 
-TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [Material UI](https://material-ui.com/) as a UI component library using [Typescript](https://www.typescriptlang.org/) as the coding language. (_gosh that's a mouthful_).
+TodoHub is a [React](https://reactjs.org/) application using the [Next.js](https://nextjs.org/) framework, with [MUI](https://mui.com/) as a UI component library using [Typescript](https://www.typescriptlang.org/) as the coding language. (_gosh that's a mouthful_).
 
-The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built into Material UI. Details of how this works can be found [here](https://material-ui.com/styles/basics/). If you are familiar with CSS it shouldn't be much of a problem to adapt to.
+The styling solution is a little bit different to normal CSS, where a CSS-in-JS solution is used that is built into MUI. Details of how this works can be found [here](https://mui.com/system/basics/). If you are familiar with CSS it shouldn't be much of a problem to adapt to.
 
-Despite this seemingly complex stack of non-standard frameworks and libraries, the test is designed to be completed by developers who have no experience in them, and can most definitely be completed by those who have only experienced Javascript rather than Typescript. (_Typescript is a super-set of Javascript, so Javascript can be used just fine with no issues, if you give an object a type of "any", but be aware this is bad Typescript practise_).
+Despite this seemingly complex stack of non-standard frameworks and libraries, the test is designed to be completed by developers who have no experience in them, and can most definitely be completed by those who have only experienced Javascript rather than Typescript. (_Typescript is a super-set of Javascript, so Javascript can be used just fine with no issues if you give an object a type of "any", but be aware this is bad Typescript practise_).
 
 The idea is that the skeleton of the application and the instructions in this **README** are enough to carry out the tasks required.
 
@@ -46,35 +48,16 @@ For example:
 // react imports
 import React, { useState } from "react";
 
-// material-ui imports
-import Dialog, { DialogProps } from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import Button from "@material-ui/core/Button";
+// mui imports
+import Dialog, { DialogProps } from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
 
 // internal imports
 import { TodoItem } from "../TodoItem";
 import TodoItemForm from "../TodoItemForm";
-```
-
-_Note: there is what seems to be a bug with `material-ui` imports and VSCode_
-
-```
-// VSCode will try to import material-ui components in 2 incorrect ways
-
-// Although this way will work, it does not enable tree-shaking (all the components will be imported rather than only what we need)
-// This can be mitigated using babel, but this project will not tree-shake properly
-// Wrong (but if you did it this way consistently it isn't a massive issue as long as you are aware of tbe pitfalls)
-import { Dialog } from "@material-ui-/core"
-
-// VSCode will also try to do this, if you leave imports like this in projects, then styles can be loaded in twice, casuing some odd CSS issues down the road
-// Wrong
-import Dialog from "@material-ui-/core/Dialog/Dialog"
-
-// Try and do it this way to stay consistent
-// Right
-import Dialog from "@material-ui-/core/Dialog"
 ```
 
 ### Naming
