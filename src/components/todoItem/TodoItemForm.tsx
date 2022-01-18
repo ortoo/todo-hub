@@ -1,26 +1,8 @@
 import React from "react";
 
-import { styled } from "@mui/material/styles";
-
 import TextField from "@mui/material/TextField";
 
 import { TodoItem } from "./TodoItem";
-
-const PREFIX = "TodoItemForm";
-
-const classes = {
-  titleField: `${PREFIX}-titleField`,
-};
-
-// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => {
-  return {
-    [`& .${classes.titleField}`]: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(2),
-    },
-  };
-});
 
 interface Props {
   todoItem: TodoItem;
@@ -32,9 +14,9 @@ const TodoItemForm = ({ todoItem, onChange }: Props) => {
   const { title, description } = todoItem;
 
   return (
-    <Root>
+    <>
       <TextField
-        className={classes.titleField}
+        sx={{ mt: 1, mb: 2 }}
         fullWidth
         variant="outlined"
         label="Title"
@@ -54,7 +36,7 @@ const TodoItemForm = ({ todoItem, onChange }: Props) => {
           onChange({ ...todoItem, description: event.target.value });
         }}
       />
-    </Root>
+    </>
   );
 };
 

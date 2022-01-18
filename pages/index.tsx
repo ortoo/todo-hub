@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import { styled } from "@mui/material/styles";
-
 import Fab from "@mui/material/Fab";
 import Tooltip from "@mui/material/Tooltip";
 import AddIcon from "@mui/icons-material/Add";
@@ -10,26 +8,6 @@ import Container from "@mui/material/Container";
 import TodoList from "../src/components/todoItem/list/TodoList";
 import CreateTodoItemDialog from "../src/components/todoItem/create/CreateTodoItemDialog";
 import { TodoItem } from "../src/components/todoItem/TodoItem";
-
-const PREFIX = "Index";
-
-const classes = {
-  todoList: `${PREFIX}-todoList`,
-  createItemFab: `${PREFIX}-createItemFab`,
-};
-
-const StyledContainer = styled(Container)(({ theme }) => {
-  return {
-    [`& .${classes.todoList}`]: {
-      marginTop: theme.spacing(2),
-    },
-    [`& .${classes.createItemFab}`]: {
-      position: "absolute",
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
-    },
-  };
-});
 
 // this is the main page of the application, it is not expected that you would need another page
 const Index = () => {
@@ -48,12 +26,15 @@ const Index = () => {
   };
 
   return (
-    <StyledContainer>
-      <TodoList className={classes.todoList} todoItems={todoItems}></TodoList>
-
+    <Container>
+      <TodoList sx={{ mt: 2 }} todoItems={todoItems}></TodoList>
       <Tooltip title="Create new todo item">
         <Fab
-          className={classes.createItemFab}
+          sx={(theme) => ({
+            position: "absolute",
+            bottom: theme.spacing(2),
+            right: theme.spacing(2),
+          })}
           onClick={() => setCreateTodoDialogOpen(true)}
           color="primary"
         >
@@ -65,7 +46,7 @@ const Index = () => {
         onCloseRequest={() => setCreateTodoDialogOpen(false)}
         onSave={addTodoItem}
       ></CreateTodoItemDialog>
-    </StyledContainer>
+    </Container>
   );
 };
 
