@@ -70,14 +70,16 @@ When naming things, be explicit and make sure that the next person who looks at 
 
 We won't go into too much detail here as we are sure you already have these things or know how to get them installed easily enough.
 
-### Prerequisites
+You can either get setup locally on your own machine, or just use the [Github Codespaces](https://github.com/features/codespaces) version of the application if you have it available to you.
+
+### Prerequisites (Local)
 
 - A code editor, we recommend [Visual Studio Code](https://code.visualstudio.com/).
 - [Node.js & NPM](https://nodejs.org/en/), npm comes with node, get version 14 at the very least and make sure it is configured in your PATH.
 - The latest version of Typescript, which can be installed globally using `npm install -g typescript` after you have installed npm in the previous step.
 - Yourself and a few hours of your time.
 
-### Setup
+### Setup (Local)
 
 1. Duplicate this repository (https://github.com/ortoo/todo-hub), if you are unsure how to do this, please refer to [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/duplicating-a-repository).
 2. Ensure that your repository is private so that other applicants cannot see your code.
