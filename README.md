@@ -62,7 +62,7 @@ import TodoItemForm from "../TodoItemForm";
 
 ### Naming
 
-> Naming things is the hardest part of software development - _James Sharp - Head of Engineering_
+> Naming things is the hardest part of software development - _James Sharp - CTO_
 
 When naming things, be explicit and make sure that the next person who looks at your code is able to read it. The code you write isn't just for the compiler, it's also for the next person. Keep that in mind.
 
