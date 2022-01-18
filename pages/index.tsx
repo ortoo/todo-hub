@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-import Fab from "@material-ui/core/Fab";
-import Tooltip from "@material-ui/core/Tooltip";
-import AddIcon from "@material-ui/icons/Add";
-import Container from "@material-ui/core/Container";
+import Fab from "@mui/material/Fab";
+import Tooltip from "@mui/material/Tooltip";
+import AddIcon from "@mui/icons-material/Add";
+import Container from "@mui/material/Container";
 
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import { Theme } from "@material-ui/core/styles";
+import { Theme } from "@mui/material/styles";
+
+import makeStyles from "@mui/styles/makeStyles";
 
 import TodoList from "../src/components/todoItem/list/TodoList";
 import CreateTodoItemDialog from "../src/components/todoItem/create/CreateTodoItemDialog";
