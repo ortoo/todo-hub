@@ -1,13 +1,14 @@
 import React from "react";
 
-import ListSubheader from "@material-ui/core/ListSubheader";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
+import ListSubheader from "@mui/material/ListSubheader";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import { Theme } from "@material-ui/core/styles";
+import { Theme } from "@mui/material/styles";
 
-import WarningIcon from "@material-ui/icons/Warning";
+import makeStyles from '@mui/styles/makeStyles';
+
+import WarningIcon from "@mui/icons-material/Warning";
 
 import { TodoItem } from "../TodoItem";
 import TodoItemCard from "../TodoItemCard";

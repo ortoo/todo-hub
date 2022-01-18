@@ -1,8 +1,9 @@
 import React from "react";
 
-import TextField from "@material-ui/core/TextField";
-import { Theme } from "@material-ui/core/styles";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import TextField from "@mui/material/TextField";
+import { Theme } from "@mui/material/styles";
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import { TodoItem } from "./TodoItem";
 
@@ -25,31 +26,29 @@ const TodoItemForm = ({ todoItem, onChange }: Props) => {
 
   const { title, description } = todoItem;
 
-  return (
-    <>
-      <TextField
-        className={classes.titleField}
-        fullWidth
-        variant="outlined"
-        label="Title"
-        value={title}
-        onChange={(event) => {
-          onChange({ ...todoItem, title: event.target.value });
-        }}
-      />
-      <TextField
-        fullWidth
-        variant="outlined"
-        label="Description"
-        multiline
-        rowsMax={4}
-        value={description}
-        onChange={(event) => {
-          onChange({ ...todoItem, description: event.target.value });
-        }}
-      />
-    </>
-  );
+  return <>
+    <TextField
+      className={classes.titleField}
+      fullWidth
+      variant="outlined"
+      label="Title"
+      value={title}
+      onChange={(event) => {
+        onChange({ ...todoItem, title: event.target.value });
+      }}
+    />
+    <TextField
+      fullWidth
+      variant="outlined"
+      label="Description"
+      multiline
+      maxRows={4}
+      value={description}
+      onChange={(event) => {
+        onChange({ ...todoItem, description: event.target.value });
+      }}
+    />
+  </>;
 };
 
 export default TodoItemForm;

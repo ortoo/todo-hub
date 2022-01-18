@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import Dialog, { DialogProps } from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import Button from "@material-ui/core/Button";
+import Dialog, { DialogProps } from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import Button from "@mui/material/Button";
 
 import { TodoItem } from "../TodoItem";
 import TodoItemForm from "../TodoItemForm";
@@ -28,31 +28,29 @@ const CreateTodoItemDialog = ({
     description: "",
   });
 
-  return (
-    <>
-      <Dialog
-        open={open}
-        // When the dialog is closing, reset the data for the form
-        onExiting={() => setTodoItem({ title: "", description: "" })}
-        {...other}
-      >
-        <DialogTitle>Create a new todo item</DialogTitle>
-        <DialogContent>
-          <TodoItemForm
-            todoItem={todoItem}
-            onChange={(updatedTodoItem) => setTodoItem(updatedTodoItem)}
-          ></TodoItemForm>
-        </DialogContent>
+  return <>
+    <Dialog
+      open={open}
+      {...other}
+      TransitionProps={{
+        onExiting: () => setTodoItem({ title: "", description: "" })
+      }}>
+      <DialogTitle>Create a new todo item</DialogTitle>
+      <DialogContent>
+        <TodoItemForm
+          todoItem={todoItem}
+          onChange={(updatedTodoItem) => setTodoItem(updatedTodoItem)}
+        ></TodoItemForm>
+      </DialogContent>
 
-        <DialogActions>
-          <Button onClick={() => onCloseRequest()}>Close</Button>
-          <Button color="primary" onClick={() => onSave(todoItem)}>
-            Save
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
-  );
+      <DialogActions>
+        <Button onClick={() => onCloseRequest()}>Close</Button>
+        <Button color="primary" onClick={() => onSave(todoItem)}>
+          Save
+        </Button>
+      </DialogActions>
+    </Dialog>
+  </>;
 };
 
 export default CreateTodoItemDialog;
