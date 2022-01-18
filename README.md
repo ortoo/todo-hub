@@ -75,7 +75,7 @@ We won't go into too much detail here as we are sure you already have these thin
 - A code editor, we recommend [Visual Studio Code](https://code.visualstudio.com/).
 - [Node.js & NPM](https://nodejs.org/en/), npm comes with node, get version 14 at the very least and make sure it is configured in your PATH.
 - The latest version of Typescript, which can be installed globally using `npm install -g typescript` after you have installed npm in the previous step.
-- Yourself and a couple of hours of your time.
+- Yourself and a few hours of your time.
 
 ### Setup
 
