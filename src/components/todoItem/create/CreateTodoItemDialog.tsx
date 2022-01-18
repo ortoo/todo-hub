@@ -28,29 +28,36 @@ const CreateTodoItemDialog = ({
     description: "",
   });
 
-  return <>
-    <Dialog
-      open={open}
-      {...other}
-      TransitionProps={{
-        onExiting: () => setTodoItem({ title: "", description: "" })
-      }}>
-      <DialogTitle>Create a new todo item</DialogTitle>
-      <DialogContent>
-        <TodoItemForm
-          todoItem={todoItem}
-          onChange={(updatedTodoItem) => setTodoItem(updatedTodoItem)}
-        ></TodoItemForm>
-      </DialogContent>
+  return (
+    <>
+      <Dialog
+        open={open}
+        {...other}
+        TransitionProps={{
+          onExiting: () => setTodoItem({ title: "", description: "" }),
+        }}
+      >
+        <DialogTitle>Create a new todo item</DialogTitle>
+        <DialogContent>
+          <TodoItemForm
+            todoItem={todoItem}
+            onChange={(updatedTodoItem) => setTodoItem(updatedTodoItem)}
+          ></TodoItemForm>
+        </DialogContent>
 
-      <DialogActions>
-        <Button onClick={() => onCloseRequest()}>Close</Button>
-        <Button color="primary" onClick={() => onSave(todoItem)}>
-          Save
-        </Button>
-      </DialogActions>
-    </Dialog>
-  </>;
+        <DialogActions>
+          <Button onClick={() => onCloseRequest()}>Close</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => onSave(todoItem)}
+          >
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
 };
 
 export default CreateTodoItemDialog;
