@@ -1,15 +1,21 @@
 import React from "react";
 
-import TextField from "@mui/material/TextField";
-import { Theme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
-import makeStyles from "@mui/styles/makeStyles";
+import TextField from "@mui/material/TextField";
 
 import { TodoItem } from "./TodoItem";
 
-const useStyles = makeStyles((theme: Theme) => {
+const PREFIX = "TodoItemForm";
+
+const classes = {
+  titleField: `${PREFIX}-titleField`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled("div")(({ theme }) => {
   return {
-    titleField: {
+    [`& .${classes.titleField}`]: {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(2),
     },
@@ -23,12 +29,10 @@ interface Props {
 
 // The todo form that appears inside the create modal, could be used for edit too perhaps?
 const TodoItemForm = ({ todoItem, onChange }: Props) => {
-  const classes = useStyles();
-
   const { title, description } = todoItem;
 
   return (
-    <>
+    <Root>
       <TextField
         className={classes.titleField}
         fullWidth
@@ -50,7 +54,7 @@ const TodoItemForm = ({ todoItem, onChange }: Props) => {
           onChange({ ...todoItem, description: event.target.value });
         }}
       />
-    </>
+    </Root>
   );
 };
 

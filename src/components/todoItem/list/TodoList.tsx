@@ -1,25 +1,30 @@
 import React from "react";
 
+import { styled } from "@mui/material/styles";
+
 import ListSubheader from "@mui/material/ListSubheader";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-
-import { Theme } from "@mui/material/styles";
-
-import makeStyles from '@mui/styles/makeStyles';
 
 import WarningIcon from "@mui/icons-material/Warning";
 
 import { TodoItem } from "../TodoItem";
 import TodoItemCard from "../TodoItemCard";
 
-const useStyles = makeStyles((theme: Theme) => {
+const PREFIX = "TodoList";
+
+const classes = {
+  noTodos: `${PREFIX}-noTodos`,
+  warningIcon: `${PREFIX}-warningIcon`,
+};
+
+const Root = styled("div")(({ theme }) => {
   return {
-    noTodos: {
+    [`& .${classes.noTodos}`]: {
       padding: theme.spacing(2),
       textAlign: "center",
     },
-    warningIcon: {
+    [`& .${classes.warningIcon}`]: {
       fontSize: "50px",
     },
   };
@@ -32,12 +37,10 @@ interface Props {
 
 // This component renders the list of todo items as well as anything else in the context of a todo list
 const TodoList = ({ className, todoItems }: Props) => {
-  const classes = useStyles();
-
   const todoItemsCount = todoItems?.length || 0;
 
   return (
-    <div className={className}>
+    <Root className={className}>
       {todoItemsCount > 0 ? (
         <ListSubheader>{`You have ${todoItemsCount} thing${
           todoItemsCount === 1 ? "" : "s"
@@ -63,7 +66,7 @@ const TodoList = ({ className, todoItems }: Props) => {
           );
         })}
       </Grid>
-    </div>
+    </Root>
   );
 };
 

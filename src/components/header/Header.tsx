@@ -1,28 +1,31 @@
 import React from "react";
 
+import { styled } from "@mui/material/styles";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-import { Theme } from "@mui/material/styles";
+const PREFIX = "Header";
 
-import makeStyles from '@mui/styles/makeStyles';
+const classes = {
+  title: `${PREFIX}-title`,
+};
 
-const useStyles = makeStyles((theme: Theme) => {
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled("div")(({ theme }) => {
   return {
-    title: {
+    [`& .${classes.title}`]: {
       flexGrow: 1,
     },
   };
 });
 
 const Header = () => {
-  const classes = useStyles();
-
   return (
-    <>
+    <Root>
       <AppBar position="fixed" color="primary">
         <Container disableGutters>
           <Toolbar>
@@ -37,7 +40,7 @@ const Header = () => {
         </Container>
       </AppBar>
       <Toolbar />
-    </>
+    </Root>
   );
 };
 
